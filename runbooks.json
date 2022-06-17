@@ -1,0 +1,11 @@
+{
+        "purpose": "AzureAutoAccPowerShellRunbooks",
+        "runbooks": 
+            {
+                "runbookName": "runbook1",
+                "runbookScript": "${path.module}/../scripts/runbook1.ps1", 
+                "runbookType": "PowerShell",
+                "description": "This Run Book is to automate stop the AKS cluster"
+            }        
+}
+   

@@ -1,0 +1,30 @@
+[
+    {
+    "purpose": "AzureAutoAccPowerShellRunbookSchedules",
+    "schedules": [{
+            "scheduleName": "stop-cluster",
+            "scheduleFrequency": "Week",
+            "scheduleInterval": 1,
+            "scheduleTZ": "America/New_York",
+            "scheduleStartTime": "2022-04-29T18:00:15+02:00",
+            "scheduleDescription": "This is an example schedule",
+            "scheduleWeekdays": ["Friday"]
+        }
+     ]
+
+    },
+    
+    {
+    "purpose": "AzureAutoAccPowerShellRunbookSchedules",
+    "schedules": [{
+            "scheduleName": "start-cluster",
+            "scheduleFrequency": "Week",
+            "scheduleInterval": 1,
+            "scheduleTZ": "America/New_York",
+            "scheduleStartTime": "2022-04-29T18:00:15+02:00",
+            "scheduleDescription": "This is an example schedule",
+            "scheduleWeekdays": ["Monday"]
+        }
+     ]
+    }
+]
