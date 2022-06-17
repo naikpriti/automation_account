@@ -28,16 +28,11 @@ provider "azapi" {
   # tenant_id       = "..."
 }
 
-resource "azurerm_resource_group" "rg_automation_account" {
-  name     = "rg-aatestps-dev-eus2"
-  location = "eastus2"
-
-}
 
 resource "azurerm_automation_account" "aa_demo" {
   name                = "aademops"
   location            = azurerm_resource_group.rg_automation_account.location
-  resource_group_name = azurerm_resource_group.rg_automation_account.name
+  resource_group_name = var.resource_group_name
 
   sku_name = "Basic"
 
