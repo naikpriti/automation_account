@@ -8,6 +8,12 @@ variable "location" {
     description = "Azure region where the resources would be provisioned"
 }
 
+variable "resource_group_name"{
+    type = string
+    description = "resource group name "
+
+}
+
 /*variable "db_username" {
     type = string
     description = "username for the MySQL database"
