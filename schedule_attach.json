@@ -1,31 +1,27 @@
-[
-    {
-         "purpose": "AzureAutoAccRunbooksSchedulesAttach",
-         "scheduleAttach": [{
+{
+    
+        
+         "scheduleAttach" : {
+             "scheduleAttach1": {
                  "runbookName" : "runbook1",
-                 "scheduleName": "start-schedule",
+                 "scheduleName": "stop-cluster",
                  "runbookType" : "PowerShell",
                  "description" : "This Run Book is a demo for MSSQL Job automation and logging",
-                 "parameter1"  : "test-aks",
-                 "parameter2"  : "test",
+                 "parameter1"  : "mycluster",
+                 "parameter2"  : "myrg",
                  "parameter3"  : "stop"
-             }
-         ]
- 
-     },
-     {
- 
-         "purpose": "AzureAutoAccRunbooksSchedulesAttach",
-         "scheduleAttach": [{
+             },
+            "scheduleAttach2": {
                  "runbookName" : "runbook1",
-                 "scheduleName": "stop-schedule",
+                 "scheduleName": "start-cluster",
                  "runbookType" : "PowerShell",
                  "description" : "This Run Book is a demo for MSSQL Job automation and logging",
-                 "parameter1"  : "test-aks",
-                 "parameter2"  : "test",
+                 "parameter1"  : "mycluster",
+                 "parameter2"  : "myrg",
                  "parameter3"  : "start"
              }
-         ]
-     }
- ]
+         
+        }
+ 
+}
  

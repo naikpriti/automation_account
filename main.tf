@@ -1,37 +1,25 @@
-# Configure the Azure provider
 terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 2.65"
-    }
-    azapi = {
-      source  = "Azure/azapi"
+      version = "=3.0.0"
     }
   }
-
-  required_version = ">= 1.1.0"
 }
 
 provider "azurerm" {
   features {}
-}
 
-provider "azapi" {
-  # More information on the authentication methods supported by
-  # the AzureRM Provider can be found here:
-  # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
-
-  # subscription_id = "..."
-  # client_id       = "..."
-  # client_secret   = "..."
-  # tenant_id       = "..."
+  subscription_id = "149fdc07-203b-4014-9552-2dab6195289b"
+  #client_id       = "6fea9247-494c-46bf-9ef9-06e22218a4a3"
+  #client_secret   = "Lzq8Q~DNXgu37MIj1fC-tDxWYKyGz16ymTJTEasf"
+  tenant_id       = "71da3921-d9d0-4946-a824-72fc3472839b"
 }
 
 
 resource "azurerm_automation_account" "aa_demo" {
   name                = "aademops"
-  location            = azurerm_resource_group.rg_automation_account.location
+  location            = var.location
   resource_group_name = var.resource_group_name
 
   sku_name = "Basic"
@@ -55,5 +43,5 @@ resource "azurerm_automation_account" "aa_demo" {
 resource "azurerm_role_assignment" "example" {
   scope              = "/subscriptions/149fdc07-203b-4014-9552-2dab6195289b"
   role_definition_name = "Contributor"
-  principal_id       = azurerm_automation_account.example.identity[0].principal_id
+  principal_id       = azurerm_automation_account.aa_demo.identity[0].principal_id
 }
