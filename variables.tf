@@ -1,7 +1,7 @@
-variable "clustername" {
+/*variable "clustername" {
     type = string
     description = "AKS cluster name "
-}
+}*/
 
 variable "location" {
     type = string
