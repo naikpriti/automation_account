@@ -1,6 +1,6 @@
 locals {
   # Load all of the data from json
-  all_json_data = jsondecode(file("runbooks.json"))
+  all_json_data = jsondecode(file("${path.module}/runbooks.json"))
   #all_json_data = jsondecode(file("${var.runbooks_file}"))
 
   # Load the runbooks
