@@ -1,6 +1,6 @@
 locals {
   # Load all of the data from json
-  all_sch_attach_json_data = jsondecode(file("schedule_attach.json"))
+  all_sch_attach_json_data = jsondecode(file("${path.module}/schedule_attach.json"))
 
   # Load the runbooks
   #schedule_attach_data = local.all_sch_attach_json_data.scheduleAttach1
