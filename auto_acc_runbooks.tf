@@ -10,10 +10,10 @@ locals {
   #rb_count = length(local.all_json_data)
 }
 
-data "local_file" "runbook_scripts" {
+/*data "local_file" "runbook_scripts" {
   #count                   = "${local.rb_count}"  
   filename                = local.all_json_data.runbooks.runbookScript
-}
+}*/
 
 resource "azurerm_automation_runbook" "runbooks" {
   #count                   = "${local.rb_count}"
@@ -25,5 +25,5 @@ resource "azurerm_automation_runbook" "runbooks" {
   log_progress            = "true"
   description             = local.all_json_data.runbooks.description 
   runbook_type            = local.all_json_data.runbooks.runbookType 
-  content                 = data.local_file.runbook_scripts.content
+  content                 = local.all_json_data.runbooks.runbookScript
 }
