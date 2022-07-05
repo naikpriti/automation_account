@@ -41,7 +41,7 @@ resource "azurerm_automation_account" "aa_demo" {
 
 
 resource "azurerm_role_assignment" "example" {
-  scope              = "/subscriptions/149fdc07-203b-4014-9552-2dab6195289b"
+  scope              = "/subscriptions/${var.subscription_id}"
   role_definition_name = "Contributor"
   principal_id       = azurerm_automation_account.aa_demo.identity[0].principal_id
 }
