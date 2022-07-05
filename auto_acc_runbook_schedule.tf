@@ -21,7 +21,7 @@ resource "azurerm_automation_schedule" "example-schedule" {
   automation_account_name = azurerm_automation_account.aa_demo.name
   frequency               = each.value.scheduleFrequency
   interval                = each.value.scheduleInterval
-  timezone                = each.value.scheduleTZ
+  timezone                = var.timezone
   start_time              = each.value.scheduleStartTime
   description             = each.value.scheduleDescription
   week_days               = each.value.scheduleWeekdays
