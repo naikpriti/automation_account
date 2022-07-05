@@ -7,17 +7,17 @@
                  "scheduleName": "stop-cluster",
                  "runbookType" : "PowerShell",
                  "description" : "This Run Book is a demo for MSSQL Job automation and logging",
-                 "parameter1"  : "mycluster",
-                 "parameter2"  : "myrg",
-                 "parameter3"  : "stop"
+                 "parameter1"  : "${var.clustername}",
+                 "parameter2"  : "${var.resource_group_name}",
+                 "parameter3"  : "${each.value.parameter3}"
              },
             "scheduleAttach2": {
                  "runbookName" : "runbook1",
                  "scheduleName": "start-cluster",
                  "runbookType" : "PowerShell",
                  "description" : "This Run Book is a demo for MSSQL Job automation and logging",
-                 "parameter1"  : "mycluster",
-                 "parameter2"  : "myrg",
+                 "parameter1"  : "${var.clustername}",
+                 "parameter2"  : "${var.resource_group_name}",
                  "parameter3"  : "start"
              }
          
